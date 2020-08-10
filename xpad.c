@@ -85,8 +85,7 @@
 #define XTYPE_XBOX        0
 #define XTYPE_XBOX360     1
 #define XTYPE_XBOX360W    2
-#define XTYPE_XBOXONE     3
-#define XTYPE_UNKNOWN     4
+#define XTYPE_UNKNOWN     3
 
 static bool dpad_to_buttons;
 module_param(dpad_to_buttons, bool, S_IRUGO);
@@ -125,10 +124,6 @@ static const struct xpad_device {
 	{ 0x045e, 0x028e, "Microsoft X-Box 360 pad", 0, XTYPE_XBOX360 },
 	{ 0x045e, 0x028f, "Microsoft X-Box 360 pad v2", 0, XTYPE_XBOX360 },
 	{ 0x045e, 0x0291, "Xbox 360 Wireless Receiver (XBOX)", MAP_DPAD_TO_BUTTONS, XTYPE_XBOX360W },
-	{ 0x045e, 0x02d1, "Microsoft X-Box One pad", 0, XTYPE_XBOXONE },
-	{ 0x045e, 0x02dd, "Microsoft X-Box One pad (Firmware 2015)", 0, XTYPE_XBOXONE },
-	{ 0x045e, 0x02e3, "Microsoft X-Box One Elite pad", 0, XTYPE_XBOXONE },
-	{ 0x045e, 0x02ea, "Microsoft X-Box One S pad", 0, XTYPE_XBOXONE },
 	{ 0x045e, 0x0719, "Xbox 360 Wireless Receiver", MAP_DPAD_TO_BUTTONS, XTYPE_XBOX360W },
 	{ 0x046d, 0xc21d, "Logitech Gamepad F310", 0, XTYPE_XBOX360 },
 	{ 0x046d, 0xc21e, "Logitech Gamepad F510", 0, XTYPE_XBOX360 },
@@ -169,7 +164,6 @@ static const struct xpad_device {
 	{ 0x0738, 0x4740, "Mad Catz Beat Pad", 0, XTYPE_XBOX360 },
 	{ 0x0738, 0x4743, "Mad Catz Beat Pad Pro", MAP_DPAD_TO_BUTTONS, XTYPE_XBOX },
 	{ 0x0738, 0x4758, "Mad Catz Arcade Game Stick", MAP_TRIGGERS_TO_BUTTONS, XTYPE_XBOX360 },
-	{ 0x0738, 0x4a01, "Mad Catz FightStick TE 2", MAP_TRIGGERS_TO_BUTTONS, XTYPE_XBOXONE },
 	{ 0x0738, 0x6040, "Mad Catz Beat Pad Pro", MAP_DPAD_TO_BUTTONS, XTYPE_XBOX },
 	{ 0x0738, 0x9871, "Mad Catz Portable Drum", 0, XTYPE_XBOX360 },
 	{ 0x0738, 0xb726, "Mad Catz Xbox controller - MW2", 0, XTYPE_XBOX360 },
@@ -201,25 +195,10 @@ static const struct xpad_device {
 	{ 0x0e6f, 0x011f, "Rock Candy Gamepad Wired Controller", 0, XTYPE_XBOX360 },
 	{ 0x0e6f, 0x0131, "PDP EA Sports Controller", 0, XTYPE_XBOX360 },
 	{ 0x0e6f, 0x0133, "Xbox 360 Wired Controller", 0, XTYPE_XBOX360 },
-	{ 0x0e6f, 0x0139, "Afterglow Prismatic Wired Controller", 0, XTYPE_XBOXONE },
-	{ 0x0e6f, 0x013a, "PDP Xbox One Controller", 0, XTYPE_XBOXONE },
-	{ 0x0e6f, 0x0146, "Rock Candy Wired Controller for Xbox One", 0, XTYPE_XBOXONE },
-	{ 0x0e6f, 0x0147, "PDP Marvel Xbox One Controller", 0, XTYPE_XBOXONE },
-	{ 0x0e6f, 0x015c, "PDP Xbox One Arcade Stick", MAP_TRIGGERS_TO_BUTTONS, XTYPE_XBOXONE },
-	{ 0x0e6f, 0x0161, "PDP Xbox One Controller", 0, XTYPE_XBOXONE },
-	{ 0x0e6f, 0x0162, "PDP Xbox One Controller", 0, XTYPE_XBOXONE },
-	{ 0x0e6f, 0x0163, "PDP Xbox One Controller", 0, XTYPE_XBOXONE },
-	{ 0x0e6f, 0x0164, "PDP Battlefield One", 0, XTYPE_XBOXONE },
-	{ 0x0e6f, 0x0165, "PDP Titanfall 2", 0, XTYPE_XBOXONE },
 	{ 0x0e6f, 0x0201, "Pelican PL-3601 'TSZ' Wired Xbox 360 Controller", 0, XTYPE_XBOX360 },
 	{ 0x0e6f, 0x0213, "Afterglow Gamepad for Xbox 360", 0, XTYPE_XBOX360 },
 	{ 0x0e6f, 0x021f, "Rock Candy Gamepad for Xbox 360", 0, XTYPE_XBOX360 },
-	{ 0x0e6f, 0x0246, "Rock Candy Gamepad for Xbox One 2015", 0, XTYPE_XBOXONE },
-	{ 0x0e6f, 0x02ab, "PDP Controller for Xbox One", 0, XTYPE_XBOXONE },
-	{ 0x0e6f, 0x02a4, "PDP Wired Controller for Xbox One - Stealth Series", 0, XTYPE_XBOXONE },
-	{ 0x0e6f, 0x02a6, "PDP Wired Controller for Xbox One - Camo Series", 0, XTYPE_XBOXONE },
 	{ 0x0e6f, 0x0301, "Logic3 Controller", 0, XTYPE_XBOX360 },
-	{ 0x0e6f, 0x0346, "Rock Candy Gamepad for Xbox One 2016", 0, XTYPE_XBOXONE },
 	{ 0x0e6f, 0x0401, "Logic3 Controller", 0, XTYPE_XBOX360 },
 	{ 0x0e6f, 0x0413, "Afterglow AX.1 Gamepad for Xbox 360", 0, XTYPE_XBOX360 },
 	{ 0x0e6f, 0x0501, "PDP Xbox 360 Controller", 0, XTYPE_XBOX360 },
@@ -231,9 +210,6 @@ static const struct xpad_device {
 	{ 0x0f0d, 0x000d, "Hori Fighting Stick EX2", MAP_TRIGGERS_TO_BUTTONS, XTYPE_XBOX360 },
 	{ 0x0f0d, 0x0016, "Hori Real Arcade Pro.EX", MAP_TRIGGERS_TO_BUTTONS, XTYPE_XBOX360 },
 	{ 0x0f0d, 0x001b, "Hori Real Arcade Pro VX", MAP_TRIGGERS_TO_BUTTONS, XTYPE_XBOX360 },
-	{ 0x0f0d, 0x0063, "Hori Real Arcade Pro Hayabusa (USA) Xbox One", MAP_TRIGGERS_TO_BUTTONS, XTYPE_XBOXONE },
-	{ 0x0f0d, 0x0067, "HORIPAD ONE", 0, XTYPE_XBOXONE },
-	{ 0x0f0d, 0x0078, "Hori Real Arcade Pro V Kai Xbox One", MAP_TRIGGERS_TO_BUTTONS, XTYPE_XBOXONE },
 	{ 0x0f30, 0x010b, "Philips Recoil", 0, XTYPE_XBOX },
 	{ 0x0f30, 0x0202, "Joytech Advanced Controller", 0, XTYPE_XBOX },
 	{ 0x0f30, 0x8888, "BigBen XBMiniPad Controller", 0, XTYPE_XBOX },
@@ -250,8 +226,6 @@ static const struct xpad_device {
 	{ 0x1430, 0xf801, "RedOctane Controller", 0, XTYPE_XBOX360 },
 	{ 0x146b, 0x0601, "BigBen Interactive XBOX 360 Controller", 0, XTYPE_XBOX360 },
 	{ 0x1532, 0x0037, "Razer Sabertooth", 0, XTYPE_XBOX360 },
-	{ 0x1532, 0x0a00, "Razer Atrox Arcade Stick", MAP_TRIGGERS_TO_BUTTONS, XTYPE_XBOXONE },
-	{ 0x1532, 0x0a03, "Razer Wildcat", 0, XTYPE_XBOXONE },
 	{ 0x15e4, 0x3f00, "Power A Mini Pro Elite", 0, XTYPE_XBOX360 },
 	{ 0x15e4, 0x3f0a, "Xbox Airflo wired controller", 0, XTYPE_XBOX360 },
 	{ 0x15e4, 0x3f10, "Batarang Xbox 360 controller", 0, XTYPE_XBOX360 },
@@ -301,9 +275,6 @@ static const struct xpad_device {
 	{ 0x24c6, 0x530a, "Xbox 360 Pro EX Controller", 0, XTYPE_XBOX360 },
 	{ 0x24c6, 0x531a, "PowerA Pro Ex", 0, XTYPE_XBOX360 },
 	{ 0x24c6, 0x5397, "FUS1ON Tournament Controller", 0, XTYPE_XBOX360 },
-	{ 0x24c6, 0x541a, "PowerA Xbox One Mini Wired Controller", 0, XTYPE_XBOXONE },
-	{ 0x24c6, 0x542a, "Xbox ONE spectra", 0, XTYPE_XBOXONE },
-	{ 0x24c6, 0x543a, "PowerA Xbox One wired controller", 0, XTYPE_XBOXONE },
 	{ 0x24c6, 0x5500, "Hori XBOX 360 EX 2 with Turbo", 0, XTYPE_XBOX360 },
 	{ 0x24c6, 0x5501, "Hori Real Arcade Pro VX-SA", 0, XTYPE_XBOX360 },
 	{ 0x24c6, 0x5502, "Hori Fighting Stick VX Alt", MAP_TRIGGERS_TO_BUTTONS, XTYPE_XBOX360 },
@@ -311,8 +282,6 @@ static const struct xpad_device {
 	{ 0x24c6, 0x5506, "Hori SOULCALIBUR V Stick", 0, XTYPE_XBOX360 },
 	{ 0x24c6, 0x550d, "Hori GEM Xbox controller", 0, XTYPE_XBOX360 },
 	{ 0x24c6, 0x550e, "Hori Real Arcade Pro V Kai 360", MAP_TRIGGERS_TO_BUTTONS, XTYPE_XBOX360 },
-	{ 0x24c6, 0x551a, "PowerA FUSION Pro Controller", 0, XTYPE_XBOXONE },
-	{ 0x24c6, 0x561a, "PowerA FUSION Controller", 0, XTYPE_XBOXONE },
 	{ 0x24c6, 0x5b00, "ThrustMaster Ferrari 458 Racing Wheel", 0, XTYPE_XBOX360 },
 	{ 0x24c6, 0x5b02, "Thrustmaster, Inc. GPX Controller", 0, XTYPE_XBOX360 },
 	{ 0x24c6, 0x5b03, "Thrustmaster Ferrari 458 Racing Wheel", 0, XTYPE_XBOX360 },
@@ -389,154 +358,34 @@ static const signed short xpad_abs_triggers[] = {
 	{ XPAD_XBOX360_VENDOR_PROTOCOL((vend), 1) }, \
 	{ XPAD_XBOX360_VENDOR_PROTOCOL((vend), 129) }
 
-/* The Xbox One controller uses subclass 71 and protocol 208. */
-#define XPAD_XBOXONE_VENDOR_PROTOCOL(vend, pr) \
-	.match_flags = USB_DEVICE_ID_MATCH_VENDOR | USB_DEVICE_ID_MATCH_INT_INFO, \
-	.idVendor = (vend), \
-	.bInterfaceClass = USB_CLASS_VENDOR_SPEC, \
-	.bInterfaceSubClass = 71, \
-	.bInterfaceProtocol = (pr)
-#define XPAD_XBOXONE_VENDOR(vend) \
-	{ XPAD_XBOXONE_VENDOR_PROTOCOL((vend), 208) }
-
 static const struct usb_device_id xpad_table[] = {
 	{ USB_INTERFACE_INFO('X', 'B', 0) },	/* X-Box USB-IF not approved class */
 	XPAD_XBOX360_VENDOR(0x0079),		/* GPD Win 2 Controller */
 	XPAD_XBOX360_VENDOR(0x044f),		/* Thrustmaster X-Box 360 controllers */
 	XPAD_XBOX360_VENDOR(0x045e),		/* Microsoft X-Box 360 controllers */
-	XPAD_XBOXONE_VENDOR(0x045e),		/* Microsoft X-Box One controllers */
 	XPAD_XBOX360_VENDOR(0x046d),		/* Logitech X-Box 360 style controllers */
 	XPAD_XBOX360_VENDOR(0x056e),		/* Elecom JC-U3613M */
 	XPAD_XBOX360_VENDOR(0x06a3),		/* Saitek P3600 */
 	XPAD_XBOX360_VENDOR(0x0738),		/* Mad Catz X-Box 360 controllers */
 	{ USB_DEVICE(0x0738, 0x4540) },		/* Mad Catz Beat Pad */
-	XPAD_XBOXONE_VENDOR(0x0738),		/* Mad Catz FightStick TE 2 */
 	XPAD_XBOX360_VENDOR(0x07ff),		/* Mad Catz GamePad */
 	XPAD_XBOX360_VENDOR(0x0e6f),		/* 0x0e6f X-Box 360 controllers */
-	XPAD_XBOXONE_VENDOR(0x0e6f),		/* 0x0e6f X-Box One controllers */
 	XPAD_XBOX360_VENDOR(0x0f0d),		/* Hori Controllers */
-	XPAD_XBOXONE_VENDOR(0x0f0d),		/* Hori Controllers */
 	XPAD_XBOX360_VENDOR(0x1038),		/* SteelSeries Controllers */
 	XPAD_XBOX360_VENDOR(0x11c9),		/* Nacon GC100XF */
 	XPAD_XBOX360_VENDOR(0x12ab),		/* X-Box 360 dance pads */
 	XPAD_XBOX360_VENDOR(0x1430),		/* RedOctane X-Box 360 controllers */
 	XPAD_XBOX360_VENDOR(0x146b),		/* BigBen Interactive Controllers */
 	XPAD_XBOX360_VENDOR(0x1532),		/* Razer Sabertooth */
-	XPAD_XBOXONE_VENDOR(0x1532),		/* Razer Wildcat */
 	XPAD_XBOX360_VENDOR(0x15e4),		/* Numark X-Box 360 controllers */
 	XPAD_XBOX360_VENDOR(0x162e),		/* Joytech X-Box 360 controllers */
 	XPAD_XBOX360_VENDOR(0x1689),		/* Razer Onza */
 	XPAD_XBOX360_VENDOR(0x1bad),		/* Harminix Rock Band Guitar and Drums */
 	XPAD_XBOX360_VENDOR(0x24c6),		/* PowerA Controllers */
-	XPAD_XBOXONE_VENDOR(0x24c6),		/* PowerA Controllers */
 	{ }
 };
 
 MODULE_DEVICE_TABLE(usb, xpad_table);
-
-struct xboxone_init_packet {
-	u16 idVendor;
-	u16 idProduct;
-	const u8 *data;
-	u8 len;
-};
-
-#define XBOXONE_INIT_PKT(_vid, _pid, _data)		\
-	{						\
-		.idVendor	= (_vid),		\
-		.idProduct	= (_pid),		\
-		.data		= (_data),		\
-		.len		= ARRAY_SIZE(_data),	\
-	}
-
-
-/*
- * This packet is required for all Xbox One pads with 2015
- * or later firmware installed (or present from the factory).
- */
-static const u8 xboxone_fw2015_init[] = {
-	0x05, 0x20, 0x00, 0x01, 0x00
-};
-
-/*
- * This packet is required for Xbox One S (0x045e:0x02ea)
- * and Xbox One Elite Series 2 (0x045e:0x0b00) pads to
- * initialize the controller that was previously used in
- * Bluetooth mode.
- */
-static const u8 xboxone_s_init[] = {
-	0x05, 0x20, 0x00, 0x0f, 0x06
-};
-
-/*
- * This packet is required for the Titanfall 2 Xbox One pads
- * (0x0e6f:0x0165) to finish initialization and for Hori pads
- * (0x0f0d:0x0067) to make the analog sticks work.
- */
-static const u8 xboxone_hori_init[] = {
-	0x01, 0x20, 0x00, 0x09, 0x00, 0x04, 0x20, 0x3a,
-	0x00, 0x00, 0x00, 0x80, 0x00
-};
-
-/*
- * This packet is required for most (all?) of the PDP pads to start
- * sending input reports. These pads include: (0x0e6f:0x02ab),
- * (0x0e6f:0x02a4), (0x0e6f:0x02a6).
- */
-static const u8 xboxone_pdp_init1[] = {
-	0x0a, 0x20, 0x00, 0x03, 0x00, 0x01, 0x14
-};
-
-/*
- * This packet is required for most (all?) of the PDP pads to start
- * sending input reports. These pads include: (0x0e6f:0x02ab),
- * (0x0e6f:0x02a4), (0x0e6f:0x02a6).
- */
-static const u8 xboxone_pdp_init2[] = {
-	0x06, 0x20, 0x00, 0x02, 0x01, 0x00
-};
-
-/*
- * A specific rumble packet is required for some PowerA pads to start
- * sending input reports. One of those pads is (0x24c6:0x543a).
- */
-static const u8 xboxone_rumblebegin_init[] = {
-	0x09, 0x00, 0x00, 0x09, 0x00, 0x0F, 0x00, 0x00,
-	0x1D, 0x1D, 0xFF, 0x00, 0x00
-};
-
-/*
- * A rumble packet with zero FF intensity will immediately
- * terminate the rumbling required to init PowerA pads.
- * This should happen fast enough that the motors don't
- * spin up to enough speed to actually vibrate the gamepad.
- */
-static const u8 xboxone_rumbleend_init[] = {
-	0x09, 0x00, 0x00, 0x09, 0x00, 0x0F, 0x00, 0x00,
-	0x00, 0x00, 0x00, 0x00, 0x00
-};
-
-/*
- * This specifies the selection of init packets that a gamepad
- * will be sent on init *and* the order in which they will be
- * sent. The correct sequence number will be added when the
- * packet is going to be sent.
- */
-static const struct xboxone_init_packet xboxone_init_packets[] = {
-	XBOXONE_INIT_PKT(0x0e6f, 0x0165, xboxone_hori_init),
-	XBOXONE_INIT_PKT(0x0f0d, 0x0067, xboxone_hori_init),
-	XBOXONE_INIT_PKT(0x0000, 0x0000, xboxone_fw2015_init),
-	XBOXONE_INIT_PKT(0x045e, 0x02ea, xboxone_s_init),
-	XBOXONE_INIT_PKT(0x045e, 0x0b00, xboxone_s_init),
-	XBOXONE_INIT_PKT(0x0e6f, 0x0000, xboxone_pdp_init1),
-	XBOXONE_INIT_PKT(0x0e6f, 0x0000, xboxone_pdp_init2),
-	XBOXONE_INIT_PKT(0x24c6, 0x541a, xboxone_rumblebegin_init),
-	XBOXONE_INIT_PKT(0x24c6, 0x542a, xboxone_rumblebegin_init),
-	XBOXONE_INIT_PKT(0x24c6, 0x543a, xboxone_rumblebegin_init),
-	XBOXONE_INIT_PKT(0x24c6, 0x541a, xboxone_rumbleend_init),
-	XBOXONE_INIT_PKT(0x24c6, 0x542a, xboxone_rumbleend_init),
-	XBOXONE_INIT_PKT(0x24c6, 0x543a, xboxone_rumbleend_init),
-};
 
 struct xpad_output_packet {
 	u8 data[XPAD_PKT_LEN];
@@ -567,7 +416,6 @@ struct usb_xpad {
 	struct urb *irq_out;		/* urb for interrupt out report */
 	struct usb_anchor irq_out_anchor;
 	bool irq_out_active;		/* we must not use an active URB */
-	u8 odata_serial;		/* serial number for xbox one protocol */
 	unsigned char *odata;		/* output data */
 	dma_addr_t odata_dma;
 	spinlock_t odata_lock;
@@ -591,7 +439,6 @@ struct usb_xpad {
 
 static int xpad_init_input(struct usb_xpad *xpad);
 static void xpad_deinit_input(struct usb_xpad *xpad);
-static void xpadone_ack_mode_report(struct usb_xpad *xpad, u8 seq_num);
 
 /*
  *	xpad_process_packet
@@ -810,99 +657,6 @@ static void xpad360w_process_packet(struct usb_xpad *xpad, u16 cmd, unsigned cha
 	rcu_read_unlock();
 }
 
-/*
- *	xpadone_process_packet
- *
- *	Completes a request by converting the data into events for the
- *	input subsystem. This version is for the Xbox One controller.
- *
- *	The report format was gleaned from
- *	https://github.com/kylelemons/xbox/blob/master/xbox.go
- */
-static void xpadone_process_packet(struct usb_xpad *xpad, u16 cmd, unsigned char *data)
-{
-	struct input_dev *dev = xpad->dev;
-
-	/* the xbox button has its own special report */
-	if (data[0] == 0X07) {
-		/*
-		 * The Xbox One S controller requires these reports to be
-		 * acked otherwise it continues sending them forever and
-		 * won't report further mode button events.
-		 */
-		if (data[1] == 0x30)
-			xpadone_ack_mode_report(xpad, data[2]);
-
-		input_report_key(dev, BTN_MODE, data[4] & 0x01);
-		input_sync(dev);
-		return;
-	}
-	/* check invalid packet */
-	else if (data[0] != 0X20)
-		return;
-
-	/* menu/view buttons */
-	input_report_key(dev, BTN_START,  data[4] & 0x04);
-	input_report_key(dev, BTN_SELECT, data[4] & 0x08);
-
-	/* buttons A,B,X,Y */
-	input_report_key(dev, BTN_A,	data[4] & 0x10);
-	input_report_key(dev, BTN_B,	data[4] & 0x20);
-	input_report_key(dev, BTN_X,	data[4] & 0x40);
-	input_report_key(dev, BTN_Y,	data[4] & 0x80);
-
-	/* digital pad */
-	if (xpad->mapping & MAP_DPAD_TO_BUTTONS) {
-		/* dpad as buttons (left, right, up, down) */
-		input_report_key(dev, BTN_TRIGGER_HAPPY1, data[5] & 0x04);
-		input_report_key(dev, BTN_TRIGGER_HAPPY2, data[5] & 0x08);
-		input_report_key(dev, BTN_TRIGGER_HAPPY3, data[5] & 0x01);
-		input_report_key(dev, BTN_TRIGGER_HAPPY4, data[5] & 0x02);
-	} else {
-		input_report_abs(dev, ABS_HAT0X,
-				 !!(data[5] & 0x08) - !!(data[5] & 0x04));
-		input_report_abs(dev, ABS_HAT0Y,
-				 !!(data[5] & 0x02) - !!(data[5] & 0x01));
-	}
-
-	/* TL/TR */
-	input_report_key(dev, BTN_TL,	data[5] & 0x10);
-	input_report_key(dev, BTN_TR,	data[5] & 0x20);
-
-	/* stick press left/right */
-	input_report_key(dev, BTN_THUMBL, data[5] & 0x40);
-	input_report_key(dev, BTN_THUMBR, data[5] & 0x80);
-
-	if (!(xpad->mapping & MAP_STICKS_TO_NULL)) {
-		/* left stick */
-		input_report_abs(dev, ABS_X,
-				 (__s16) le16_to_cpup((__le16 *)(data + 10)));
-		input_report_abs(dev, ABS_Y,
-				 ~(__s16) le16_to_cpup((__le16 *)(data + 12)));
-
-		/* right stick */
-		input_report_abs(dev, ABS_RX,
-				 (__s16) le16_to_cpup((__le16 *)(data + 14)));
-		input_report_abs(dev, ABS_RY,
-				 ~(__s16) le16_to_cpup((__le16 *)(data + 16)));
-	}
-
-	/* triggers left/right */
-	if (xpad->mapping & MAP_TRIGGERS_TO_BUTTONS) {
-		input_report_key(dev, BTN_TL2,
-				 (__u16) le16_to_cpup((__le16 *)(data + 6)));
-		input_report_key(dev, BTN_TR2,
-				 (__u16) le16_to_cpup((__le16 *)(data + 8)));
-	} else {
-		input_report_abs(dev, ABS_Z,
-				 (__u16) le16_to_cpup((__le16 *)(data + 6)));
-		input_report_abs(dev, ABS_RZ,
-				 (__u16) le16_to_cpup((__le16 *)(data + 8)));
-	}
-
-	input_sync(dev);
-}
-
 static void xpad_irq_in(struct urb *urb)
 {
 	struct usb_xpad *xpad = urb->context;
@@ -935,9 +689,6 @@ static void xpad_irq_in(struct urb *urb)
 	case XTYPE_XBOX360W:
 		xpad360w_process_packet(xpad, 0, xpad->idata);
 		break;
-	case XTYPE_XBOXONE:
-		xpadone_process_packet(xpad, 0, xpad->idata);
-		break;
 	default:
 		xpad_process_packet(xpad, 0, xpad->idata);
 	}
@@ -950,46 +701,10 @@ exit:
 }
 
 /* Callers must hold xpad->odata_lock spinlock */
-static bool xpad_prepare_next_init_packet(struct usb_xpad *xpad)
-{
-	const struct xboxone_init_packet *init_packet;
-
-	if (xpad->xtype != XTYPE_XBOXONE)
-		return false;
-
-	/* Perform initialization sequence for Xbox One pads that require it */
-	while (xpad->init_seq < ARRAY_SIZE(xboxone_init_packets)) {
-		init_packet = &xboxone_init_packets[xpad->init_seq++];
-
-		if (init_packet->idVendor != 0 &&
-		    init_packet->idVendor != xpad->dev->id.vendor)
-			continue;
-
-		if (init_packet->idProduct != 0 &&
-		    init_packet->idProduct != xpad->dev->id.product)
-			continue;
-
-		/* This packet applies to our device, so prepare to send it */
-		memcpy(xpad->odata, init_packet->data, init_packet->len);
-		xpad->irq_out->transfer_buffer_length = init_packet->len;
-
-		/* Update packet with current sequence number */
-		xpad->odata[2] = xpad->odata_serial++;
-		return true;
-	}
-
-	return false;
-}
-
-/* Callers must hold xpad->odata_lock spinlock */
 static bool xpad_prepare_next_out_packet(struct usb_xpad *xpad)
 {
 	struct xpad_output_packet *pkt, *packet = NULL;
 	int i;
-
-	/* We may have init packets to send before we can send user commands */
-	if (xpad_prepare_next_init_packet(xpad))
-		return true;
 
 	for (i = 0; i < XPAD_NUM_OUT_PACKETS; i++) {
 		if (++xpad->last_out_packet >= XPAD_NUM_OUT_PACKETS)
@@ -1174,50 +889,6 @@ static int xpad_inquiry_pad_presence(struct usb_xpad *xpad)
 	return retval;
 }
 
-static int xpad_start_xbox_one(struct usb_xpad *xpad)
-{
-	unsigned long flags;
-	int retval;
-
-	spin_lock_irqsave(&xpad->odata_lock, flags);
-
-	/*
-	 * Begin the init sequence by attempting to send a packet.
-	 * We will cycle through the init packet sequence before
-	 * sending any packets from the output ring.
-	 */
-	xpad->init_seq = 0;
-	retval = xpad_try_sending_next_out_packet(xpad);
-
-	spin_unlock_irqrestore(&xpad->odata_lock, flags);
-
-	return retval;
-}
-
-static void xpadone_ack_mode_report(struct usb_xpad *xpad, u8 seq_num)
-{
-	unsigned long flags;
-	struct xpad_output_packet *packet =
-			&xpad->out_packets[XPAD_OUT_CMD_IDX];
-	static const u8 mode_report_ack[] = {
-		0x01, 0x20, 0x00, 0x09, 0x00, 0x07, 0x20, 0x02,
-		0x00, 0x00, 0x00, 0x00, 0x00
-	};
-
-	spin_lock_irqsave(&xpad->odata_lock, flags);
-
-	packet->len = sizeof(mode_report_ack);
-	memcpy(packet->data, mode_report_ack, packet->len);
-	packet->data[2] = seq_num;
-	packet->pending = true;
-
-	/* Reset the sequence so we send out the ack now */
-	xpad->last_out_packet = -1;
-	xpad_try_sending_next_out_packet(xpad);
-
-	spin_unlock_irqrestore(&xpad->odata_lock, flags);
-}
-
 #ifdef CONFIG_JOYSTICK_XPAD_FF
 static int xpad_play_effect(struct input_dev *dev, void *data, struct ff_effect *effect)
 {
@@ -1275,24 +946,6 @@ static int xpad_play_effect(struct input_dev *dev, void *data, struct ff_effect 
 		packet->data[10] = 0x00;
 		packet->data[11] = 0x00;
 		packet->len = 12;
-		packet->pending = true;
-		break;
-
-	case XTYPE_XBOXONE:
-		packet->data[0] = 0x09; /* activate rumble */
-		packet->data[1] = 0x00;
-		packet->data[2] = xpad->odata_serial++;
-		packet->data[3] = 0x09;
-		packet->data[4] = 0x00;
-		packet->data[5] = 0x0F;
-		packet->data[6] = 0x00;
-		packet->data[7] = 0x00;
-		packet->data[8] = strong / 512;	/* left actuator */
-		packet->data[9] = weak / 512;	/* right actuator */
-		packet->data[10] = 0xFF; /* on period */
-		packet->data[11] = 0x00; /* off period */
-		packet->data[12] = 0xFF; /* repeat count */
-		packet->len = 13;
 		packet->pending = true;
 		break;
 
@@ -1477,18 +1130,8 @@ static void xpad_led_disconnect(struct usb_xpad *xpad) { }
 
 static int xpad_start_input(struct usb_xpad *xpad)
 {
-	int error;
-
 	if (usb_submit_urb(xpad->irq_in, GFP_KERNEL))
 		return -EIO;
-
-	if (xpad->xtype == XTYPE_XBOXONE) {
-		error = xpad_start_xbox_one(xpad);
-		if (error) {
-			usb_kill_urb(xpad->irq_in);
-			return error;
-		}
-	}
 
 	return 0;
 }
@@ -1576,8 +1219,6 @@ static void xpad_close(struct input_dev *dev)
 
 static void xpad_set_up_abs(struct input_dev *input_dev, signed short abs)
 {
-	struct usb_xpad *xpad = input_get_drvdata(input_dev);
-
 	switch (abs) {
 	case ABS_X:
 	case ABS_Y:
@@ -1587,10 +1228,7 @@ static void xpad_set_up_abs(struct input_dev *input_dev, signed short abs)
 		break;
 	case ABS_Z:
 	case ABS_RZ:	/* the triggers (if mapped to axes) */
-		if (xpad->xtype == XTYPE_XBOXONE)
-			input_set_abs_params(input_dev, abs, 0, 1023, 0, 0);
-		else
-			input_set_abs_params(input_dev, abs, 0, 255, 0, 0);
+		input_set_abs_params(input_dev, abs, 0, 255, 0, 0);
 		break;
 	case ABS_HAT0X:
 	case ABS_HAT0Y:	/* the d-pad (only if dpad is mapped to axes */
@@ -1650,8 +1288,7 @@ static int xpad_init_input(struct usb_xpad *xpad)
 		input_set_capability(input_dev, EV_KEY, xpad_common_btn[i]);
 
 	/* set up model-specific ones */
-	if (xpad->xtype == XTYPE_XBOX360 || xpad->xtype == XTYPE_XBOX360W ||
-	    xpad->xtype == XTYPE_XBOXONE) {
+	if (xpad->xtype == XTYPE_XBOX360 || xpad->xtype == XTYPE_XBOX360W) {
 		for (i = 0; xpad360_btn[i] >= 0; i++)
 			input_set_capability(input_dev, EV_KEY, xpad360_btn[i]);
 	} else {
@@ -1757,8 +1394,6 @@ static int xpad_probe(struct usb_interface *intf, const struct usb_device_id *id
 		if (intf->cur_altsetting->desc.bInterfaceClass == USB_CLASS_VENDOR_SPEC) {
 			if (intf->cur_altsetting->desc.bInterfaceProtocol == 129)
 				xpad->xtype = XTYPE_XBOX360W;
-			else if (intf->cur_altsetting->desc.bInterfaceProtocol == 208)
-				xpad->xtype = XTYPE_XBOXONE;
 			else
 				xpad->xtype = XTYPE_XBOX360;
 		} else {
@@ -1771,17 +1406,6 @@ static int xpad_probe(struct usb_interface *intf, const struct usb_device_id *id
 			xpad->mapping |= MAP_TRIGGERS_TO_BUTTONS;
 		if (sticks_to_null)
 			xpad->mapping |= MAP_STICKS_TO_NULL;
-	}
-
-	if (xpad->xtype == XTYPE_XBOXONE &&
-	    intf->cur_altsetting->desc.bInterfaceNumber != 0) {
-		/*
-		 * The Xbox One controller lists three interfaces all with the
-		 * same interface class, subclass and protocol. Differentiate by
-		 * interface number.
-		 */
-		error = -ENODEV;
-		goto err_free_in_urb;
 	}
 
 	ep_irq_in = ep_irq_out = NULL;
@@ -1924,13 +1548,6 @@ static int xpad_resume(struct usb_interface *intf)
 		mutex_lock(&input->mutex);
 		if (input->users) {
 			retval = xpad_start_input(xpad);
-		} else if (xpad->xtype == XTYPE_XBOXONE) {
-			/*
-			 * Even if there are no users, we'll send Xbox One pads
-			 * the startup sequence so they don't sit there and
-			 * blink until somebody opens the input device again.
-			 */
-			retval = xpad_start_xbox_one(xpad);
 		}
 		mutex_unlock(&input->mutex);
 	}
