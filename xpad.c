@@ -85,7 +85,7 @@
 #define XTYPE_XBOX        0
 #define XTYPE_XBOX360     1
 #define XTYPE_XBOX360W    2
-#define XTYPE_UNKNOWN     3
+#define XTYPE_UNKNOWN     4
 
 static bool dpad_to_buttons;
 module_param(dpad_to_buttons, bool, S_IRUGO);
